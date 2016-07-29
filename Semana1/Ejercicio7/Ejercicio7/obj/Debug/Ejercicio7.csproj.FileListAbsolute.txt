@@ -1,0 +1,6 @@
+c:\users\pablo\documents\visual studio 2015\Projects\Ejercicio7\Ejercicio7\bin\Debug\Ejercicio7.exe.config
+c:\users\pablo\documents\visual studio 2015\Projects\Ejercicio7\Ejercicio7\bin\Debug\Ejercicio7.exe
+c:\users\pablo\documents\visual studio 2015\Projects\Ejercicio7\Ejercicio7\bin\Debug\Ejercicio7.pdb
+c:\users\pablo\documents\visual studio 2015\Projects\Ejercicio7\Ejercicio7\obj\Debug\Ejercicio7.csprojResolveAssemblyReference.cache
+c:\users\pablo\documents\visual studio 2015\Projects\Ejercicio7\Ejercicio7\obj\Debug\Ejercicio7.exe
+c:\users\pablo\documents\visual studio 2015\Projects\Ejercicio7\Ejercicio7\obj\Debug\Ejercicio7.pdb
