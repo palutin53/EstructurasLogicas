@@ -27,6 +27,7 @@ namespace Ejercicios11Al14
                 Console.WriteLine(" 2. Ejercicio 12");
                 Console.WriteLine(" 3. Ejercicio 13");
                 Console.WriteLine(" 4. Ejercicio 14");
+                Console.WriteLine(" 5. SALIR");
                 int opcion = int.Parse(Console.ReadLine());
                 Console.Clear();
 
@@ -50,34 +51,21 @@ namespace Ejercicios11Al14
 
                         Console.WriteLine("Escribe un número para que pueda repetirlo de diferentes formas.");
                         int num1 = int.Parse(Console.ReadLine());
-                        int incremento = 0;
+                        
                         Console.Clear();
                         Console.WriteLine("Esta es mi repetición..");
+
+                        Console.WriteLine(num1 + " " + num1 + " " + num1);
+                        Console.WriteLine(num1 + "" + num1+""+ num1);
+                        Console.WriteLine(num1 + " " + num1 + " " + num1);
+                        Console.WriteLine(num1 + "" + num1 + ""+num1);
+
                         Console.WriteLine(" ");
-
-                        while (valid)
-                        {
-                            if(incremento <= 2)
-                            {
-                                Console.WriteLine(num1+" "+num1+" "+num1+" "+num1);
-                                Console.WriteLine(num1+""+num1+""+num1+""+num1);
-                                incremento++;
-                                Console.WriteLine(" ");
-                                Console.WriteLine("Presiona enter para volver al menú.");
-                                Console.ReadKey();
-                                Console.Clear();
-                                opcion = 0;
-                                valid = true;
-                            }
-                            else
-                            {
-                                Console.WriteLine("ERROR.");
-                                Console.ReadKey();
-                                Console.Clear();
-                                valid = true;
-                            }
-                        }
-
+                        Console.WriteLine("Presiona enter para volver al menú.");
+                        Console.ReadKey();
+                        Console.Clear();
+                        opcion = 0;
+                        valid = true;
 
                         break;
                     case 3:
@@ -117,6 +105,12 @@ namespace Ejercicios11Al14
                                 Console.WriteLine(c+" grados celsius convertidos a Kelvin son: "+ck);
                                 double cf = c * 1.8 + 32;
                                 Console.WriteLine(c + " grados celsius convertidos a Farenheith son: " + cf);
+                                Console.WriteLine("Presiona enter para salir");
+                                Console.ReadKey();
+                                Console.Clear();
+                                opcion = 0;
+                                dato = 0;
+                                valid = true;
 
                                 break;
                             case 2:
@@ -127,6 +121,12 @@ namespace Ejercicios11Al14
                                 Console.WriteLine(k + " grados Kelvin convertidos a Celsius son: " + kc);
                                 double kf = kc * 1.8 + 32;
                                 Console.WriteLine(k + " grados Kelvin convertidos a Farenheith son: " + kf);
+                                Console.WriteLine("Presiona enter para salir");
+                                Console.ReadKey();
+                                Console.Clear();
+                                opcion = 0;
+                                dato = 0;
+                                valid = true;
 
                                 break;
                             case 3:
@@ -137,6 +137,12 @@ namespace Ejercicios11Al14
                                 Console.WriteLine(f + " grados Farenheith convertidos a Celsius son: " + fc);
                                 double fk = fc + 273;
                                 Console.WriteLine(f + " grados Farenheith convertidos a Kelvin son: " + fk);
+                                Console.WriteLine("Presiona enter para salir");
+                                Console.ReadKey();
+                                Console.Clear();
+                                opcion = 0;
+                                dato = 0;
+                                valid = true;
 
                                 break;
                             case 4:
@@ -163,6 +169,44 @@ namespace Ejercicios11Al14
 
                         break;
                     case 5:
+
+                        Console.WriteLine("¿SALIR?");
+                        Console.WriteLine(" 1 .Si\n 2. No");
+                        int salida = int.Parse(Console.ReadLine());
+                        Console.Clear();
+
+                        switch (salida)
+                        {
+                            case 1:
+
+                                Console.WriteLine("FIN DEL PROGRAMA.");
+                                Console.ReadKey();
+                                valid = false;
+
+                                break;
+                            case 2:
+
+                                Console.WriteLine("Presiona enter para volver al menú.");
+                                Console.ReadKey();
+                                Console.Clear();
+                                opcion = 0;
+                                salida = 0;
+                                valid = true;
+
+
+                                break;
+                            default:
+
+                                Console.WriteLine("Seleccion invalida.");
+                                Console.ReadKey();
+                                Console.Clear();
+                                opcion = 0;
+                                salida = 0;
+                                valid = true;
+
+                                break;
+                        }
+
                         break;
                     default:
 
