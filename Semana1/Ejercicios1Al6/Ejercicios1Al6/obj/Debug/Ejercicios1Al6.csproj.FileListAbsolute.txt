@@ -4,3 +4,9 @@ c:\users\pablo\documents\visual studio 2015\Projects\Ejercicios1Al6\Ejercicios1A
 c:\users\pablo\documents\visual studio 2015\Projects\Ejercicios1Al6\Ejercicios1Al6\obj\Debug\Ejercicios1Al6.csprojResolveAssemblyReference.cache
 c:\users\pablo\documents\visual studio 2015\Projects\Ejercicios1Al6\Ejercicios1Al6\obj\Debug\Ejercicios1Al6.exe
 c:\users\pablo\documents\visual studio 2015\Projects\Ejercicios1Al6\Ejercicios1Al6\obj\Debug\Ejercicios1Al6.pdb
+C:\Users\Pablo\Documents\GitHub\EstructurasLogicas\Semana1\Ejercicios1Al6\Ejercicios1Al6\bin\Debug\Ejercicios1Al6.exe.config
+C:\Users\Pablo\Documents\GitHub\EstructurasLogicas\Semana1\Ejercicios1Al6\Ejercicios1Al6\obj\Debug\Ejercicios1Al6.exe
+C:\Users\Pablo\Documents\GitHub\EstructurasLogicas\Semana1\Ejercicios1Al6\Ejercicios1Al6\obj\Debug\Ejercicios1Al6.pdb
+C:\Users\Pablo\Documents\GitHub\EstructurasLogicas\Semana1\Ejercicios1Al6\Ejercicios1Al6\bin\Debug\Ejercicios1Al6.exe
+C:\Users\Pablo\Documents\GitHub\EstructurasLogicas\Semana1\Ejercicios1Al6\Ejercicios1Al6\bin\Debug\Ejercicios1Al6.pdb
+C:\Users\Pablo\Documents\GitHub\EstructurasLogicas\Semana1\Ejercicios1Al6\Ejercicios1Al6\obj\Debug\Ejercicios1Al6.csprojResolveAssemblyReference.cache
