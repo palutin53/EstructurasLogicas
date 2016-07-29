@@ -3,3 +3,8 @@ c:\users\pablo\documents\visual studio 2015\Projects\Ejercicio8\Ejercicio8\bin\D
 c:\users\pablo\documents\visual studio 2015\Projects\Ejercicio8\Ejercicio8\bin\Debug\Ejercicio8.pdb
 c:\users\pablo\documents\visual studio 2015\Projects\Ejercicio8\Ejercicio8\obj\Debug\Ejercicio8.exe
 c:\users\pablo\documents\visual studio 2015\Projects\Ejercicio8\Ejercicio8\obj\Debug\Ejercicio8.pdb
+C:\Users\Pablo\Documents\GitHub\EstructurasLogicas\Semana1\Ejercicio8\Ejercicio8\bin\Debug\Ejercicio8.exe.config
+C:\Users\Pablo\Documents\GitHub\EstructurasLogicas\Semana1\Ejercicio8\Ejercicio8\obj\Debug\Ejercicio8.exe
+C:\Users\Pablo\Documents\GitHub\EstructurasLogicas\Semana1\Ejercicio8\Ejercicio8\obj\Debug\Ejercicio8.pdb
+C:\Users\Pablo\Documents\GitHub\EstructurasLogicas\Semana1\Ejercicio8\Ejercicio8\bin\Debug\Ejercicio8.exe
+C:\Users\Pablo\Documents\GitHub\EstructurasLogicas\Semana1\Ejercicio8\Ejercicio8\bin\Debug\Ejercicio8.pdb

@@ -4,3 +4,6 @@ c:\users\pablo\documents\visual studio 2015\Projects\Ejercicio10\Ejercicio10\bin
 c:\users\pablo\documents\visual studio 2015\Projects\Ejercicio10\Ejercicio10\obj\Debug\Ejercicio10.csprojResolveAssemblyReference.cache
 c:\users\pablo\documents\visual studio 2015\Projects\Ejercicio10\Ejercicio10\obj\Debug\Ejercicio10.exe
 c:\users\pablo\documents\visual studio 2015\Projects\Ejercicio10\Ejercicio10\obj\Debug\Ejercicio10.pdb
+C:\Users\Pablo\Documents\GitHub\EstructurasLogicas\Semana1\Ejercicio10\Ejercicio10\bin\Debug\Ejercicio10.exe.config
+C:\Users\Pablo\Documents\GitHub\EstructurasLogicas\Semana1\Ejercicio10\Ejercicio10\obj\Debug\Ejercicio10.exe
+C:\Users\Pablo\Documents\GitHub\EstructurasLogicas\Semana1\Ejercicio10\Ejercicio10\obj\Debug\Ejercicio10.pdb
