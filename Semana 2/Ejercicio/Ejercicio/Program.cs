@@ -182,7 +182,38 @@ namespace Ejercicio
                         break;
                     case 4:
 
+                        bool valid4 = true;
+                        while ()
+                        {
 
+                            Console.WriteLine("Ok, vamos a hacer operaciones aritmeticas, ingresa los numeros y la operacion (+ , - , * , /) que desees realizar.");
+
+                        }
+
+                        Console.WriteLine("¿Quieres intentar de nuevo?\n 1. Si\n 2. No");
+                        int salir3 = int.Parse(Console.ReadLine());
+
+                        switch (salir3)
+                        {
+                            case 1:
+                                Console.WriteLine("presiona enter para retornar.");
+                                while (Console.ReadKey().Key != ConsoleKey.Enter) { }
+                                Console.Clear();
+                                valid3 = true;
+                                break;
+                            case 2:
+                                Console.WriteLine("Presiona enter para salir.");
+                                while (Console.ReadKey().Key != ConsoleKey.Enter) { }
+                                Console.Clear();
+                                valid3 = false;
+                                break;
+                            default:
+                                Console.WriteLine("Selección invalida.");
+                                while (Console.ReadKey().Key != ConsoleKey.Enter) { }
+                                Console.Clear();
+                                valid3 = true;
+                                break;
+                        }
 
                         break;
                     default:
