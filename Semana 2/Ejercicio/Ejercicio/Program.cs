@@ -10,7 +10,6 @@ namespace Ejercicio
     {
         static void Main(string[] args)
         {
-
             //inicio
 
             Console.WriteLine("¡Hola! ingresa tu nombre: ");
@@ -69,7 +68,7 @@ namespace Ejercicio
                             enter();
                             Console.Clear();
 
-                            salir();
+                            validsub = salir();
 
                         }
 
@@ -96,6 +95,8 @@ namespace Ejercicio
                             enter();
                             Console.Clear();
 
+                            validsub = salir();
+
                         }
 
                         break;
@@ -112,7 +113,9 @@ namespace Ejercicio
                             enter();
                             Console.Clear();
                         }
-                        
+
+                            validsub = salir();
+
                         }
                         break;
                     case 4:
@@ -176,6 +179,7 @@ namespace Ejercicio
                                 validsub = true;
                             }
 
+                            validsub = salir();
                         }
 
                         break;
@@ -205,7 +209,7 @@ namespace Ejercicio
                             enter();
                             Console.Clear();
 
-                            salir();
+                            validsub = salir();
 
                         }
                         
@@ -219,18 +223,23 @@ namespace Ejercicio
                             enter();
                             Console.WriteLine("vamos a examinar los valores de la funcion x = y^2 + 2y + 1");
                             enter();
-                            Console.WriteLine("Puedes utilizar valores de -5 hasta 5, ¿Listo?");
+                            Console.WriteLine("Puedes utilizar valores enteros de -5 hasta 5, ¿Listo?");
                             enter();
                             Console.WriteLine("Ok, ingresa el valor para Y entre -5 y 5 que quieras colocar en la funcion.");
                             int y = int.Parse(Console.ReadLine());
                             Console.Clear();
 
-                            if (y >= -5 || y <= 5)
+                            if ((y >= (-5) && y <= 5) || (y>=(-5)&&y<=5))
                             {
-                                Console.WriteLine("si");
+                                Console.WriteLine("Ok, Sustituyendo el numero "+y+ " en la funcion x = y^2 + 2y + 1");
+                                Console.WriteLine("Presiona enter para ver el resultado.");
+                                enter();
+                                double y2 = Math.Pow(y, 2);
+                                double x = y2 + (2*y) + 1;
+                                Console.WriteLine("El valor de X cuando Y es: "+y+" es:"+x);
                                 enter();
 
-                                salir();
+                                validsub = salir();
                             }
                             else
                             {
@@ -238,9 +247,9 @@ namespace Ejercicio
                                 Console.WriteLine("recuerda que es solo entre -5 y 5, presiona enter para intentarlo de nuevo");
                                 enter();
                                 Console.Clear();
-                                validsub = true;
-                            }
 
+                                validsub = salir();
+                            }
                         }
 
                         break;
@@ -259,10 +268,10 @@ namespace Ejercicio
 
         //Funcion salir 
 
-        static void salir()
+        static bool salir()
         {
-            bool validsub = true;
 
+            bool validsub;
             Console.WriteLine("¿Quieres intentar de nuevo?\n 1. Si\n 2. No");
             int salir = int.Parse(Console.ReadLine());
                         
@@ -270,23 +279,24 @@ namespace Ejercicio
             {
                 case 1:
                     Console.WriteLine("presiona enter para retornar.");
-                    while (Console.ReadKey().Key != ConsoleKey.Enter) { }
+                    enter();
                     Console.Clear();
                     validsub = true;
                     break;
                 case 2:
                     Console.WriteLine("Presiona enter para salir.");
-                    while (Console.ReadKey().Key != ConsoleKey.Enter) { }
+                    enter();
                     Console.Clear();
                     validsub = false;
                     break;
                 default:
                     Console.WriteLine("Selección invalida.");
-                    while (Console.ReadKey().Key != ConsoleKey.Enter) { }
+                    enter();
                     Console.Clear();
                     validsub = true;
                     break;
             }
+            return validsub;
         }
 
     }
