@@ -61,8 +61,10 @@ namespace Ejercicio
                             Console.WriteLine("Presiona enter para ver el orden inverso.");
                             while (Console.ReadKey().Key != ConsoleKey.Enter) { }
                             Console.WriteLine("La cadena quedan así: " + letra3 + "  " + letra2 + "  " + letra1);
+                            while(Console.ReadKey().Key != ConsoleKey.Enter) { }
+                            Console.Clear();
 
-                           
+                            salir();
 
                         }
 
@@ -173,11 +175,39 @@ namespace Ejercicio
 
                         break;
                     case 5:
+
+                        Console.WriteLine("Muy bien "+nombre+" vamos a calcular el area y perimetro de un circulo.");
+                        Console.WriteLine("presiona enter para empezar.");
+                        while (Console.ReadKey().Key != ConsoleKey.Enter) { }
+                        Console.Clear();
+
+                        // Variables necesarias
+                        double pi = Math.PI;
+
+                        Console.WriteLine("Necesitamos los siguientes datos:");
+                        Console.WriteLine("Radio del circulo:");
+                        double radio = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Presiona enter para ver los resultados");
+                        enter();
+                        double perimetro = (2 * pi) * radio;
+                        double radio2 = Math.Pow(radio, 2);
+                        double area = pi * radio2;
+                        Console.WriteLine("El perimetro de el circulo es: "+perimetro);
+                        Console.WriteLine("Y el area del ciculo es : "+area);
+                        enter();
+
                         break;
                     default:
                         break;
                 }
             }
+        }
+
+        // funcion enter
+
+        static void enter()
+        {
+            while (Console.ReadKey().Key != ConsoleKey.Enter) { }
         }
 
         //Funcion salir 
@@ -187,7 +217,7 @@ namespace Ejercicio
             Console.WriteLine("¿Quieres intentar de nuevo?\n 1. Si\n 2. No");
             int salir = int.Parse(Console.ReadLine());
             bool validsub = true;
-
+            
             switch (salir)
             {
                 case 1:
@@ -200,7 +230,7 @@ namespace Ejercicio
                     Console.WriteLine("Presiona enter para salir.");
                     while (Console.ReadKey().Key != ConsoleKey.Enter) { }
                     Console.Clear();
-                    validsub = false;
+                    validsub = !validsub;
                     break;
                 default:
                     Console.WriteLine("Selección invalida.");
