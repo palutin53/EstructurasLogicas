@@ -311,16 +311,29 @@ namespace Ejercicio
 
                         while (validsub)
                         {
-                            Console.WriteLine("ingresa cualquier valor:");
 
-                            int i = 0;
-                            string s = "100";
-                            bool result = int.TryParse(s, out i);
+                            string input = string.Empty;
 
-                            Console.WriteLine(i);
-
+                            Console.WriteLine("Ok, vamos a diferenciar numeros y letras");
                             enter();
 
+                            //Solicitar el dato
+                            Console.WriteLine("Ingresa numeros o letras");
+                            input = Console.ReadLine();
+
+                            //Llamar metodo que evalua los caracteres
+                            if (IsLetters(input))
+                            {
+                                Console.WriteLine("Los caracteres son letras.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Los caracteres son numeros");
+                            }
+                            enter();
+                            Console.Clear();
+
+                            validsub = salir();
                         }
 
                         break;
@@ -437,6 +450,19 @@ namespace Ejercicio
                         break;
                 }
             }
+        }
+
+        // Funcion de recepcion letras/numeros
+        static bool IsLetters(string sCaracteres)
+        {
+            foreach (char ch in sCaracteres)
+            {
+                if (!Char.IsLetter(ch) && ch != 32)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         // funcion enter
