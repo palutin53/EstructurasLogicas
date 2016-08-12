@@ -39,6 +39,7 @@ namespace Ejercicio
                 Console.WriteLine(" 9. Ejercicio 9");
                 Console.WriteLine(" 10. Ejercicio 10");
                 Console.WriteLine(" 11. Ejercicio 11");
+                Console.WriteLine(" 12. SALIR.");
                 opcion = int.Parse(Console.ReadLine());
                 Console.Clear();
 
@@ -238,6 +239,7 @@ namespace Ejercicio
                                 double x = y2 + (2*y) + 1;
                                 Console.WriteLine("El valor de X cuando Y es: "+y+" es:"+x);
                                 enter();
+                                Console.Clear();
 
                                 validsub = salir();
                             }
@@ -282,6 +284,7 @@ namespace Ejercicio
                     case 8:
                         while (validsub)
                         {
+
                             Console.WriteLine("Ok, en ese ejercicio con los datos que me proporciones vamos a obtener datos de una esfera.");
                             enter();
                             Console.WriteLine("Ok, necesito que introduzcas el radio de una esfera: ");
@@ -297,9 +300,128 @@ namespace Ejercicio
                             double volumen = (4 / 3) * pi * r3;
                             Console.WriteLine("El volumen de una esfera de radio "+r+" es: "+volumen);
                             enter();
+                            Console.Clear();
 
-                            salir();
+                            validsub = salir();
 
+                        }
+
+                        break;
+                    case 9:
+
+                        while (validsub)
+                        {
+                            Console.WriteLine("ingresa cualquier valor:");
+
+                            int i = 0;
+                            string s = "100";
+                            bool result = int.TryParse(s, out i);
+
+                            Console.WriteLine(i);
+
+                            enter();
+
+                        }
+
+                        break;
+                    case 10:
+
+                        while (validsub)
+                        {
+                           
+                            Console.WriteLine("Ok, vamos a ingresar 2 valores, cuando ambos numeros sean pares aparecera 'Verdadero' y 'Falso' cuando ambos sean impares");
+                            enter();
+                            Console.WriteLine("Ingresa el valor 1: ");
+                            int valor1 = int.Parse(Console.ReadLine());
+                            Console.WriteLine("Ingresa el valor 2: ");
+                            int valor2 = int.Parse(Console.ReadLine());
+                            Console.WriteLine("presiona enter para ver el resultado.");
+                            enter();
+                            Console.Clear();
+
+                            if (((valor1 % 2) == 0)&&((valor2 % 2) == 0))
+                            {
+                                Console.WriteLine("Verdadero.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Falso.");
+                            }
+
+                            enter();
+                            Console.Clear();
+
+                            validsub = salir();
+
+                        }
+
+                        break;
+                    case 11:
+
+                        while (validsub)
+                        {
+                            Console.WriteLine("Ok, en esta ocacion convertiremos numeros decimales a binarios.");
+                            enter();
+                            Console.WriteLine("Ingresa un numero decimal positivo: ");
+                            int dec = Convert.ToInt32(Console.ReadLine());
+                            string bin = "";
+
+                            if (dec > 0)
+                            {
+                                while(dec > 0)
+                                {
+                                    if (dec % 2 == 0)
+                                    {
+                                        bin = "0" + bin;
+                                    }
+                                    else
+                                    {
+                                        bin = "1" + bin;
+                                    }
+                                    dec = (int)dec / 2;
+                                }
+                            }else if (dec == 0)
+                            {
+                                bin = "0";
+                            }else
+                            {
+                                bin = "No se pudo Convertir. Ingresa un numero positivo.";
+                            }
+                            Console.WriteLine("El resultado de la conversión: "+bin);
+                            Console.ReadLine();                          
+                        }
+
+                        enter();
+                        Console.Clear();
+
+                        salir();
+
+                        break;
+                    case 12:
+
+                        Console.WriteLine("¿Quieres salir?\n 1. Si\n 2. No");
+                        int salida = int.Parse(Console.ReadLine());
+
+                        switch (salida)
+                        {
+                            case 1:
+                                Console.WriteLine("presiona enter para salir.");
+                                enter();
+                                valid = false;
+                                Console.Clear();
+                                break;
+                            case 2:
+                                Console.WriteLine("Presiona enter para retornar");
+                                enter();
+                                valid = true;
+                                Console.Clear();
+                                break;
+                            default:
+                                Console.WriteLine("Seleccion invalida, presiona enter.");
+                                enter();
+                                valid = true;
+                                Console.Clear();
+                                break;
                         }
 
                         break;
