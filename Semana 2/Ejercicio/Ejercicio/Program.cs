@@ -253,7 +253,65 @@ namespace Ejercicio
                         }
 
                         break;
+                    case 7:
+
+                        while (validsub)
+                        {
+                            Console.WriteLine("Muy bien " + nombre + " vamos a calcular la velocidad en kilómetros por hora y millas por hora con los datos que me proporciones.");
+                            enter();
+                            Console.WriteLine("Ok, necesitare los siguientes datos...");
+                            enter();
+                            Console.WriteLine("Ingresa los kilometros recorridos: ");
+                            double d = int.Parse(Console.ReadLine());
+                            Console.WriteLine("Ahora ingresa el tiempo (en horas) en que se recorrieron: ");
+                            double t = int.Parse(Console.ReadLine());
+                            double kmh = d / t;
+                            Console.WriteLine("La velocidad en Kilometros/hora es: " + kmh + " Km/h.");
+                            enter();
+                            double dm = d * 0.621371;
+                            double mih = dm / t;
+                            Console.WriteLine("y la velocidad en Millas/hora es: " + mih + " Mi/h.");
+                            enter();
+                            Console.Clear();
+
+                            validsub = salir();
+
+                        }
+
+                        break;
+                    case 8:
+                        while (validsub)
+                        {
+                            Console.WriteLine("Ok, en ese ejercicio con los datos que me proporciones vamos a obtener datos de una esfera.");
+                            enter();
+                            Console.WriteLine("Ok, necesito que introduzcas el radio de una esfera: ");
+                            double r = int.Parse(Console.ReadLine());
+                            Console.WriteLine("presiona enter para obtener los resultados.");
+                            enter();
+                            double pi = Math.PI;
+                            double r2 = Math.Pow(r, 2);
+                            double area = 2 * pi * r2;
+                            Console.WriteLine("El area de una esfera de radio "+r+" es: "+area);
+                            enter();
+                            double r3 = Math.Pow(r, 3);
+                            double volumen = (4 / 3) * pi * r3;
+                            Console.WriteLine("El volumen de una esfera de radio "+r+" es: "+volumen);
+                            enter();
+
+                            salir();
+
+                        }
+
+                        break;
                     default:
+
+                        Console.WriteLine("el valor que ingresaste no es valido.");
+                        enter();
+                        Console.WriteLine("Presiona enter para volver al menu.");
+                        enter();
+                        Console.Clear();
+                        valid = true;
+
                         break;
                 }
             }
