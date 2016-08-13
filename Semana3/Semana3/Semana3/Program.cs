@@ -22,6 +22,10 @@ namespace Semana3
                 Console.WriteLine(" 5. Ejercicio 5");
                 Console.WriteLine(" 6. Ejercicio 6");
                 Console.WriteLine(" 7. Ejercicio 7");
+                Console.WriteLine(" 8. Ejercicio 8");
+                Console.WriteLine(" 9. Ejercicio 9");
+                Console.WriteLine(" 10. Ejercicio 10");
+                Console.WriteLine(" 11. SALIR");
                 int opcion = int.Parse(Console.ReadLine());
                 Console.Clear();
 
@@ -233,7 +237,130 @@ namespace Semana3
                     case 9:
                         while (validsub)
                         {
+                            Console.WriteLine("Ok, vamos a ver como está la temperatura del ambiente y determinar que tipo de clima hay.");
+                            enter();
+                            Console.WriteLine("Ingresa la temperatura en grados centigrados");
+                            float grados = float.Parse(Console.ReadLine());
+                            if (grados<0)
+                            {
+                                Console.WriteLine("con "+grados+" Centigrados, El clima está para congelarse");
+                                Console.WriteLine("presiona enter para continuar.");
+                                enter();
+                                Console.Clear();
+                                validsub = salida();
+                            }else if (0<=grados&&grados<=10)
+                            {
+                                Console.WriteLine("con " + grados + " Centigrados, El clima está muy frío");
+                                Console.WriteLine("presiona enter para continuar.");
+                                enter();
+                                Console.Clear();
+                                validsub = salida();
+                            }
+                            else if (10<grados&&grados<=20)
+                            {
+                                Console.WriteLine("con " + grados + " Centigrados, El clima está frio");
+                                Console.WriteLine("presiona enter para continuar.");
+                                enter();
+                                Console.Clear();
+                                validsub = salida();
+                            }
+                            else if (20<grados&&grados<=30)
+                            {
+                                Console.WriteLine("con " + grados + " Centigrados, El clima está normal");
+                                Console.WriteLine("presiona enter para continuar.");
+                                enter();
+                                Console.Clear();
+                                validsub = salida();
+                            }else if (30<grados&&grados<40)
+                            {
+                                Console.WriteLine("con " + grados + " Centigrados, El clima está caliente");
+                                Console.WriteLine("presiona enter para continuar.");
+                                enter();
+                                Console.Clear();
+                                validsub = salida();
+                            }else if (grados>=40)
+                            {
+                                Console.WriteLine("con " + grados + " Centigrados, El clima está muy caliente");
+                                Console.WriteLine("presiona enter para continuar.");
+                                enter();
+                                Console.Clear();
+                                validsub = salida();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalido, intenta de nuevo.");
+                                Console.WriteLine("presiona enter para continuar.");
+                                enter();
+                                Console.Clear();
+                                validsub = salida();
+                            }
+                        }
+                        break;
+                    case 10:
+                        while (validsub)
+                        {
+                            caracter c = new caracter();
+                            char Car;
+                            Console.WriteLine("Ingresa cualquier letra");
+                            Car = Convert.ToChar(Console.ReadLine());
+                            c.Calcula(Car);
+                            Console.WriteLine("Presiona enter para continuar.");
+                            enter();
+                            Console.Clear();
 
+                            validsub = salida();
+                            
+                        }
+                        break;
+                    case 11:
+                        Console.WriteLine("¿Quieres salir?\n 1. Si\n 2. No");
+                        int salir = int.Parse(Console.ReadLine());
+                        switch (salir)
+                        {
+                            case 1:
+                                Console.WriteLine("Presiona enter para salir.");
+                                enter();
+                                Console.Clear();
+                                valid = false;
+                                break;
+                            case 2:
+                                Console.WriteLine("Presiona enter para retornar.");
+                                enter();
+                                Console.Clear();
+                                valid = true;
+                                break;
+                            default:
+                                Console.WriteLine("Selección invalida.\nPresiona enter para continuar.");
+                                enter();
+                                Console.Clear();
+                                valid = true;
+                                break;
+                        }
+                        break;
+                    case 12:
+                        Console.WriteLine("¿Quieres Salir?\n 1. Si\n 2. No");
+                        int sal = int.Parse(Console.ReadLine());
+
+                        switch (sal)
+                        {
+                            case 1:
+                                Console.WriteLine("Presiona enter para salir.");
+                                enter();
+                                Console.Clear();
+                                valid = false;
+                                break;
+                            case 2:
+                                Console.WriteLine("Presiona enter para retornar.");
+                                enter();
+                                Console.Clear();
+                                valid = true;
+                                break;
+                            default:
+                                Console.WriteLine("Selección invalida.\nPresiona enter para retornar.");
+                                enter();
+                                Console.Clear();
+                                valid = true;
+                                break;
                         }
                         break;
                     default:
@@ -283,6 +410,34 @@ namespace Semana3
         static void enter()
         {
             while(Console.ReadKey().Key != ConsoleKey.Enter){ }
+        }
+    }
+
+    class caracter
+    {
+        public void Calcula(char Car)
+        {
+            switch (Car)
+            {
+                case 'a':
+                    Console.WriteLine("'"+Car+"' es vocal");
+                    break;
+                case 'e':
+                    Console.WriteLine("'" + Car + "' es vocal");
+                    break;
+                case 'i':
+                    Console.WriteLine("'" + Car + "' es vocal");
+                    break;
+                case 'o':
+                    Console.WriteLine("'" + Car + "' es vocal");
+                    break;
+                case 'u':
+                    Console.WriteLine("'" + Car + "' es vocal");
+                    break;
+                default:
+                    Console.WriteLine("'" + Car + "' es consonante");
+                    break;
+            }
         }
     }
 }
