@@ -33,7 +33,29 @@ namespace Semana3
 
                 switch (opcion)
                 {
+                    case 1:
+                        while (validsub)
+                        {
+                            Console.WriteLine("Ingresa 2 numeros enteros:");
+                            enter();
+                            Console.WriteLine("numero 1: ");
+                            int a1 = int.Parse(Console.ReadLine());
+                            Console.WriteLine("numero 2: ");
+                            int a2 = int.Parse(Console.ReadLine());
+                            Console.WriteLine("presiona enter para ver si son iguales.");
 
+                            if (a1==a2)
+                            {
+                                Console.WriteLine(a1+" es igual que "+a2);
+                                enter();
+                                Console.WriteLine("presiona enter para continuar.");
+                                enter();
+                                Console.Clear();
+
+                                validsub = salida();
+                            }
+                        }
+                        break;
                     case 2:
                         // Ejercicio 2
                         while (validsub)
