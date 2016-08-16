@@ -46,15 +46,19 @@ namespace EjercicioArrays
 
                             Console.WriteLine("Presiona entera para poder visualizar el contenido de la lista, despues enter para continuar.");
                             enter();
-                            if ()
+                            if (nombres[0] == null)
                             {
-                                Console.WriteLine("Por el momento la lista está vacía.\nPresiona enter para continuar");
+                                Console.WriteLine("Por el momento la lista está vacía.");
+                                enter();
+                                Console.Clear();
+                                Console.WriteLine("Presiona enter para continuar");
                                 enter();
                                 Console.Clear();
                                 validsub = false;
                             } else {
                                 foreach (string s in nombres)
                                 {
+                                    Console.WriteLine(" ");
                                     Console.WriteLine(s);
                                 }
                                 enter();
