@@ -10,8 +10,20 @@ namespace EjercicioArrays
     {
         static void Main(string[] args)
         {
+            //inicio
+
+            Console.WriteLine("Ingresa tu  nombre: ");
+            string nombre = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Ok, "+nombre+" Tenemos una lista de 10 numbres, presiona enter para ver que opciones tenemos para modificarla.");
+            enter();
+            Console.Clear();
+
+            // Creando Array
+
+            string[] nombres = new string[10];
+
             // Variables globales
-            var arreglo = new string[10];
             bool valid = true;
             bool validsub = true;
 
@@ -24,7 +36,6 @@ namespace EjercicioArrays
                 Console.WriteLine(" 4. Borrar registros");
                 Console.WriteLine(" 5. SALIR.");
                 int opcion = int.Parse(Console.ReadLine());
-                enter();
                 Console.Clear();
 
                 switch (opcion) {
@@ -32,23 +43,47 @@ namespace EjercicioArrays
                         while (validsub)
                         {
                             // Visualizar registros del array
+
+                            Console.WriteLine("Presiona entera para poder visualizar el contenido de la lista, despues enter para continuar.");
+                            enter();
+                            if ()
+                            {
+                                Console.WriteLine("Por el momento la lista está vacía.\nPresiona enter para continuar");
+                                enter();
+                                Console.Clear();
+                                validsub = false;
+                            } else {
+                                foreach (string s in nombres)
+                                {
+                                    Console.WriteLine(s);
+                                }
+                                enter();
+                                Console.Clear();
+                                validsub = salir();
+                            }
                         }
                         break;
                     case 2:
-                        while (validsub) { 
+                        while (validsub) {
                             // Insertar registros
+
+                            validsub = salir();
                         }
                         break;
                     case 3:
                         while (validsub)
                         {
                             //Modificar registros
+
+                            validsub = salir();
                         }
                         break;
                     case 4:
                         while (validsub)
                         {
                             // Borrar Resgistros
+
+                            validsub = salir();
                         }
                         break;
                     case 5:
