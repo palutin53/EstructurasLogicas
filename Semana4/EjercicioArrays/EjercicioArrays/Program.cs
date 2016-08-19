@@ -119,11 +119,8 @@ namespace EjercicioArrays
                                 Console.WriteLine("La lista está llena, tienes que borrar registros para ingresar nuevos.");
                                 enter();
                                 Console.Clear();
-                                validsub = false;
-                                                               
+                                validsub = false;                                  
                             }
-                            
-
                             validsub = salir();
                         }
                         break;
@@ -131,34 +128,46 @@ namespace EjercicioArrays
                         while (validsub)
                         {
                             //Modificar registros
-
-                            Console.WriteLine("Vamos a actualizar datos.");
-                            enter();
-                            Console.WriteLine("Actualmente la lista de nombre está así:");
-                            Console.WriteLine(" ");
-
-                            foreach(string s in nombres)
+                            if (nombres[0] == null)
                             {
-                                Console.WriteLine(s);
+                                Console.WriteLine("Por el momento la lista está vacía.");
+                                enter();
+                                Console.Clear();
+                                Console.WriteLine("Presiona enter para continuar");
+                                enter();
+                                Console.Clear();
+                                validsub = false;
                             }
-
-                            Console.WriteLine("Presiona enter para editar algun registro:");
-                            enter();
-
-                            Console.WriteLine("\ncon numeros de 1 a 10, ingresa la posicion en la que quieres sustituir.");
-                            int posicion = int.Parse(Console.ReadLine());
-                            posicion = posicion - 1;
-
-                            Console.WriteLine("El nombre a editar es: "+nombres[posicion]);
-                            enter();
-                            Console.WriteLine("ahora ingresa el nuevo nombre:");
-                            string nuevonombre = Console.ReadLine();
-
-                            while (nav == posicion)
+                            else
                             {
+                                Console.WriteLine("Vamos a actualizar datos.");
+                                enter();
+                                Console.WriteLine("Actualmente la lista de nombre está así:");
+                                Console.WriteLine(" ");
 
+                                foreach (string s in nombres)
+                                {
+                                    Console.WriteLine(s);
+                                }
+
+                                Console.WriteLine("Presiona enter para editar algun registro:");
+                                enter();
+
+                                Console.WriteLine("\ncon numeros de 1 a 10, ingresa la posicion en la que quieres sustituir.");
+                                int posicion = int.Parse(Console.ReadLine());
+                                int posicion1 = posicion - 1;
+
+                                Console.WriteLine("El nombre a editar es: " + nombres[posicion1]);
+                                enter();
+                                Console.WriteLine("ahora ingresa el nuevo nombre:");
+                                string nuevonombre = Console.ReadLine();
+
+                                while (nav == posicion1)
+                                {
+                                    nombres[nav] = nuevonombre;
+                                }
+                                nav = nav + 1;
                             }
-
                             validsub = salir();
                         }
                         break;
@@ -166,6 +175,48 @@ namespace EjercicioArrays
                         while (validsub)
                         {
                             // Borrar Resgistros
+
+                            if (contador > 0)
+                            {
+                                Console.WriteLine("Así es como tenemos actualmente la lista:");
+                                Console.WriteLine(" ");
+                                foreach(string s in nombres)
+                                {
+                                    Console.WriteLine(s);
+                                }
+                                Console.WriteLine("\nCon numeros del 1 al 10 ingresa cual es el nombre que quieres borrar.");
+                                int posicion = int.Parse(Console.ReadLine());
+                                int posicion1 = posicion - 1;
+
+                                Console.WriteLine("El nombre que vamos a borrar es: " + nombres[posicion1]);
+                                enter();
+                                Console.WriteLine("Presiona enter para borrar el nombre.");
+                                enter();
+                                Console.Clear();
+
+                                while (nav == posicion1)
+                                {
+                                    nombres[nav] = null;
+                                }
+                                nav = nav + 1;
+                            }else
+                            {
+                                Console.WriteLine("La lista está vacía, no puedes borrar registros que no existen.");
+                                enter();
+                                Console.Clear();
+                            }
+
+                            if (contador > 0)
+                            {
+                                Console.WriteLine("Ya borrado el registro '" + nombres[nav] + "' quedo así:");
+                                Console.WriteLine(" ");
+
+                                foreach (string s in nombres)
+                                {
+                                    Console.WriteLine(s);
+                                }
+                            }
+                            else { }
 
                             validsub = salir();
                         }
