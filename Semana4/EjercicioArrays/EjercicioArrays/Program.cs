@@ -62,40 +62,32 @@ namespace EjercicioArrays
                                 foreach (string s in nombres)
                                 {
                                     Console.WriteLine(s);
+                                    
                                 }
                                 enter();
                                 Console.Clear();
                                 validsub = salir();
                             }
-                            opcion = 0;
                         }
                         break;
                     case 2:
                         while (validsub) {
                             // Insertar registros
 
-                            bool blanco;
-
                             Console.WriteLine("Ingresar nuevos registros.");
                             enter();
                             Console.WriteLine("Recuerda que solo tenemos 10 espacios, presiona enter para proceder a agregar nuevos registros.");
                             enter();
                             Console.Clear();
-
-                            foreach (string s in nombres)
-                            {
-                                blanco = string.IsNullOrEmpty(s);
-                            }
                             
+
                             if (contador < 10)
                             {
-                                Console.WriteLine("Ok, ingresa el nombre que quieres ingresar en la lista:");
+                                Console.WriteLine("Ok, escribe el nombre que quieres ingresar en la lista:");
                                 string nuevonombre = Console.ReadLine();
                                 Console.WriteLine("Ok, el nombre a ingresar es: " + nuevonombre + ", presiona enter para continuar");
                                 enter();
                                 Console.Clear();
-
-                                
 
                                 while (nombres[nav] == null)
                                 {
@@ -117,6 +109,13 @@ namespace EjercicioArrays
                             else
                             {
                                 Console.WriteLine("La lista está llena, tienes que borrar registros para ingresar nuevos.");
+                                Console.WriteLine(" ");
+
+                                foreach (string s in nombres)
+                                {
+                                    Console.WriteLine(s);
+                                }
+
                                 enter();
                                 Console.Clear();
                                 validsub = false;                                  
@@ -259,6 +258,7 @@ namespace EjercicioArrays
         }
        static void enter()
         {
+
             while (Console.ReadKey().Key != ConsoleKey.Enter) { }
         }
         static bool salir()
