@@ -27,10 +27,10 @@ namespace EjercicioArrays
             int contador = 0;
             int nav = 0;
             bool valid = true;
-            bool validsub = true;
 
             while (valid)
             {
+                bool validsub = true;
                 Console.WriteLine("Ingresa el valor depende de lo que quieras hacer.");
                 Console.WriteLine(" 1. Visualizar todos los registros.");
                 Console.WriteLine(" 2. Insertar registros.");
@@ -48,11 +48,9 @@ namespace EjercicioArrays
 
                             Console.WriteLine("Presiona enter para poder visualizar el contenido de la lista, despues enter para continuar.");
                             enter();
-                            if (nombres[0] == null)
+                            if (nombres[0] == null && nombres[1] == null && nombres[2] == null && nombres[3] == null && nombres[4] == null && nombres[5] == null && nombres[6] == null && nombres[7] == null && nombres[8] == null && nombres[9] == null)
                             {
                                 Console.WriteLine("Por el momento la lista está vacía.");
-                                enter();
-                                Console.Clear();
                                 Console.WriteLine("Presiona enter para continuar");
                                 enter();
                                 Console.Clear();
@@ -75,7 +73,6 @@ namespace EjercicioArrays
                             // Insertar registros
 
                             Console.WriteLine("Ingresar nuevos registros.");
-                            enter();
                             Console.WriteLine("Recuerda que solo tenemos 10 espacios, presiona enter para proceder a agregar nuevos registros.");
                             enter();
                             Console.Clear();
@@ -92,6 +89,7 @@ namespace EjercicioArrays
                                 while (nombres[nav] == null)
                                 {
                                     nombres[nav] = nuevonombre;
+                                    contador = contador + 1;
                                     Console.WriteLine("Se ha ingresado con exito el nombre: " + nuevonombre + ".\nPresiona enter para continuar.");
                                     Console.WriteLine(" ");
                                     // ------------------------------------------------------------------
@@ -101,7 +99,6 @@ namespace EjercicioArrays
                                     }
                                     // --------------------------------------------------------------------
                                     enter();
-                                    contador = contador + 1;
                                     Console.Clear();
                                 }
                                 nav = nav + 1;
@@ -127,7 +124,7 @@ namespace EjercicioArrays
                         while (validsub)
                         {
                             //Modificar registros
-                            if (nombres[0] == null)
+                            if (nombres[0] == null && nombres[1] == null && nombres[2] == null && nombres[3] == null && nombres[4] == null && nombres[5] == null && nombres[6] == null && nombres[7] == null && nombres[8] == null && nombres[9] == null)
                             {
                                 Console.WriteLine("Por el momento la lista está vacía.");
                                 enter();
@@ -161,11 +158,25 @@ namespace EjercicioArrays
                                 Console.WriteLine("ahora ingresa el nuevo nombre:");
                                 string nuevonombre = Console.ReadLine();
 
-                                while (nav == posicion1)
+                                for (nav = 0; nav <= posicion1; nav++)
                                 {
-                                    nombres[nav] = nuevonombre;
+                                    if (nav == posicion1)
+                                    {
+                                        nombres[posicion1] = nuevonombre;
+                                        Console.WriteLine("El nombre "+nuevonombre+" se ha actualizado en la posicion "+posicion+" de la tabla.");
+                                    }
                                 }
-                                nav = nav + 1;
+                                Console.WriteLine("presiona enter para ver la nueva lista.");
+                                enter();
+                                Console.Clear();
+                                foreach(string s in nombres)
+                                {
+                                    Console.WriteLine(s);
+                                }
+                                enter();
+                                Console.WriteLine("Presiona enter para continuar.");
+                                enter();
+                                Console.Clear();
                             }
                             validsub = salir();
                         }
@@ -188,17 +199,21 @@ namespace EjercicioArrays
                                 int posicion1 = posicion - 1;
 
                                 Console.WriteLine("El nombre que vamos a borrar es: " + nombres[posicion1]);
-                                enter();
                                 Console.WriteLine("Presiona enter para borrar el nombre.");
                                 enter();
                                 Console.Clear();
 
-                                while (nav == posicion1)
+                                for (nav = 0; nav <= posicion1; nav++)
                                 {
-                                    nombres[nav] = null;
+                                    if (nav == posicion1)
+                                    {
+                                        nombres[posicion1] = null;
+                                        contador = contador - 1;
+                                        Console.WriteLine("Se ha eliminado el nombre en la posicion "+posicion1+".");
+                                    }
                                 }
-                                nav = nav + 1;
-                            }else
+                            }
+                            else
                             {
                                 Console.WriteLine("La lista está vacía, no puedes borrar registros que no existen.");
                                 enter();
