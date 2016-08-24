@@ -26,7 +26,7 @@ namespace EjercicioArrays
             // Variables globales
             int contador = 0;
             int nav = 0;
-            bool valid = true;
+            bool valid = true; 
 
             while (valid)
             {
@@ -56,11 +56,12 @@ namespace EjercicioArrays
                                 Console.Clear();
                                 validsub = false;
                             } else {
+                                int lugar = 1;
                                 Console.WriteLine(" ");
                                 foreach (string s in nombres)
                                 {
-                                    Console.WriteLine(s);
-                                    
+                                    Console.WriteLine(lugar+". "+s);
+                                    lugar = lugar + 1;
                                 }
                                 enter();
                                 Console.Clear();
@@ -69,53 +70,59 @@ namespace EjercicioArrays
                         }
                         break;
                     case 2:
-                        while (validsub) {
-                            // Insertar registros
-
-                            Console.WriteLine("Ingresar nuevos registros.");
-                            Console.WriteLine("Recuerda que solo tenemos 10 espacios, presiona enter para proceder a agregar nuevos registros.");
-                            enter();
-                            Console.Clear();
-                            
-
-                            if (contador < 10)
+                        while (validsub)
+                        {
+                            if (contador<10)
                             {
-                                Console.WriteLine("Ok, escribe el nombre que quieres ingresar en la lista:");
-                                string nuevonombre = Console.ReadLine();
-                                Console.WriteLine("Ok, el nombre a ingresar es: " + nuevonombre + ", presiona enter para continuar");
+                                // Insertar registros
+                                Console.WriteLine("Para insertar nuevos nombres debes recordar 2 cosas:\n 1. No ingreses nombres repetidos.\n 2. solo tenemos espacio para 10 nombres.");
+                                Console.WriteLine("Presiona enter para continuar.");
                                 enter();
                                 Console.Clear();
+                                
+                                    Console.WriteLine("Escribe el nombre para agregar en la lista:");
+                                    string nuevonombre = Console.ReadLine();
 
-                                while (nombres[nav] == null)
-                                {
-                                    nombres[nav] = nuevonombre;
-                                    contador = contador + 1;
-                                    Console.WriteLine("Se ha ingresado con exito el nombre: " + nuevonombre + ".\nPresiona enter para continuar.");
-                                    Console.WriteLine(" ");
-                                    // ------------------------------------------------------------------
-                                    foreach (string s in nombres)
+                                    if (nuevonombre == "" || nuevonombre == " ")
                                     {
-                                        Console.WriteLine(s);
+                                        Console.WriteLine("Debes ingresar un nombre.");
+                                        enter();
+                                        Console.Clear();
+                                    } else
+                                    {
+                                        if (nombres[nav] == nuevonombre)
+                                        {
+                                            Console.WriteLine("No puedes ingresar nombres repetidos.");
+                                            enter();
+                                            Console.Clear();
+                                        }else
+                                        {
+                                        while (nombres[nav] == null)
+                                        {
+                                            nombres[nav] = nuevonombre;
+                                            contador = contador + 1;
+                                            Console.WriteLine("Se ha ingresado con exito el nombre: " + nuevonombre + ".\nPresiona enter para continuar.");
+                                            Console.WriteLine(" ");
+                                            // ------------------------------------------------------------------
+                                            int lugar = 1;
+                                            foreach (string s in nombres)
+                                            {
+                                                Console.WriteLine(lugar + ". " + s);
+                                                lugar = lugar + 1;
+                                            }
+                                            // --------------------------------------------------------------------
+                                            enter();
+                                            Console.Clear();
+                                        }
+                                        nav = nav + 1;
                                     }
-                                    // --------------------------------------------------------------------
-                                    enter();
-                                    Console.Clear();
-                                }
-                                nav = nav + 1;
-                            }
-                            else
+                                    }
+                            }else
                             {
-                                Console.WriteLine("La lista está llena, tienes que borrar registros para ingresar nuevos.");
-                                Console.WriteLine(" ");
-
-                                foreach (string s in nombres)
-                                {
-                                    Console.WriteLine(s);
-                                }
-
+                                Console.WriteLine("La lista está llena, debes borrar nombre para ingresar más.");
                                 enter();
                                 Console.Clear();
-                                validsub = false;                                  
+                                validsub = salir();
                             }
                             validsub = salir();
                         }
@@ -141,9 +148,11 @@ namespace EjercicioArrays
                                 Console.WriteLine("Actualmente la lista de nombre está así:");
                                 Console.WriteLine(" ");
 
+                                int lugar = 1;
                                 foreach (string s in nombres)
                                 {
-                                    Console.WriteLine(s);
+                                    Console.WriteLine(lugar + ". " + s);
+                                    lugar = lugar + 1;
                                 }
 
                                 Console.WriteLine("Presiona enter para editar algun registro:");
@@ -169,9 +178,11 @@ namespace EjercicioArrays
                                 Console.WriteLine("presiona enter para ver la nueva lista.");
                                 enter();
                                 Console.Clear();
-                                foreach(string s in nombres)
+                                Console.WriteLine(" ");
+                                foreach (string s in nombres)
                                 {
-                                    Console.WriteLine(s);
+                                    Console.WriteLine(lugar + ". " + s);
+                                    lugar = lugar + 1;
                                 }
                                 enter();
                                 Console.WriteLine("Presiona enter para continuar.");
@@ -190,9 +201,12 @@ namespace EjercicioArrays
                             {
                                 Console.WriteLine("Así es como tenemos actualmente la lista:");
                                 Console.WriteLine(" ");
-                                foreach(string s in nombres)
+                                int lugar = 1;
+                                Console.WriteLine(" ");
+                                foreach (string s in nombres)
                                 {
-                                    Console.WriteLine(s);
+                                    Console.WriteLine(lugar + ". " + s);
+                                    lugar = lugar + 1;
                                 }
                                 Console.WriteLine("\nCon numeros del 1 al 10 ingresa cual es el nombre que quieres borrar.");
                                 int posicion = int.Parse(Console.ReadLine());
@@ -225,9 +239,11 @@ namespace EjercicioArrays
                                 Console.WriteLine("Ya borrado el registro '" + nombres[nav] + "' quedo así:");
                                 Console.WriteLine(" ");
 
+                                int lugar = 1;
                                 foreach (string s in nombres)
                                 {
-                                    Console.WriteLine(s);
+                                    Console.WriteLine(lugar + ". " + s);
+                                    lugar = lugar + 1;
                                 }
                             }
                             else { }
