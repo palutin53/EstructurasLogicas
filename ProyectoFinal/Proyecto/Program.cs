@@ -222,7 +222,7 @@ namespace Proyecto
                     Console.WriteLine("Presiona enter para retornar.");
                     enter();
                     validsub = true;
-                    for (borrar = 0; borrar <= 100; borrar++)
+                    for (borrar = 0; borrar < 100; borrar++)
                     {
                         arreglo[borrar] = null;
                     }
