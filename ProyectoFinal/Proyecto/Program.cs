@@ -12,56 +12,59 @@ namespace Proyecto
         {
 
             bool valid = true;
-            string[] popo = new string[100];
-            int nav = 0;
-            double a = 0, x, y;
-            int contador = 0, sum = 0;
-            char signo;
+            string[] arreglo = new string[100];
+            
 
             while (valid) {
                 
                 bool validsub = true;
-                
+                int nav = 0;
+                double a = 0, x, y;
+                int contador = 0, sum = 0;
+                char signo;
+
                 Console.WriteLine("Selecciona según lo que quieras hacer:\n 1. Instrucciones\n 2. Calculadora\n 3. SALIR");
                 int opcion = int.Parse(Console.ReadLine());
+                Console.Clear();
 
                 switch (opcion)
                 {
                     case 1:
                         while (validsub)
                         {
-                            Console.WriteLine("puto");
+                            Console.WriteLine("");
                             enter();
                             Console.Clear();
-                            validsub = salir();
+                            validsub = salir(arreglo);
                         }                        
                         break;
                     case 2:
                         //----------------------------------------------------------------------------------------------------------------
                         while (validsub)
                         {
-                            for (nav = 0; nav <= 80; nav++)
+                            for (nav = 0; validsub == true; nav++)
                             {
+                                
                                 if (contador == 0)
                                 {
                                     Console.WriteLine("Escribe un numero.");
-                                    foreach (string s in popo)
+                                    foreach (string s in arreglo)
                                     {
                                         Console.Write(s);
                                     }
                                     x = int.Parse(Console.ReadLine());
-                                    popo[sum] = Convert.ToString(x);
+                                    arreglo[sum] = Convert.ToString(x);
                                     sum++;
                                     Console.Clear();
                                     Console.WriteLine("ingresa el operador");
-                                    foreach (string s in popo)
+                                    foreach (string s in arreglo)
                                     {
                                         Console.Write(s);
                                     }
                                     signo = char.Parse(Console.ReadLine());
-                                    popo[sum] = Convert.ToString(signo);
+                                    arreglo[sum] = Convert.ToString(signo);
                                     sum++;
-                                    foreach (string s in popo)
+                                    foreach (string s in arreglo)
                                     {
 
                                         Console.Write(s);
@@ -69,12 +72,12 @@ namespace Proyecto
                                     }
                                     Console.Clear();
                                     Console.WriteLine("Ingresa un numero");
-                                    foreach (string s in popo)
+                                    foreach (string s in arreglo)
                                     {
                                         Console.Write(s);
                                     }
                                     y = int.Parse(Console.ReadLine());
-                                    popo[sum] = Convert.ToString(y);
+                                    arreglo[sum] = Convert.ToString(y);
                                     sum++;
 
                                     Console.Clear();
@@ -109,34 +112,35 @@ namespace Proyecto
                                 else if (contador == 1)
                                 {
                                     Console.WriteLine("ingresa el operador");
-                                    foreach (string s in popo)
+                                    foreach (string s in arreglo)
                                     {
                                         Console.Write(s);
                                     }
                                     signo = char.Parse(Console.ReadLine());
-                                    popo[sum] = Convert.ToString(signo);
+                                    arreglo[sum] = Convert.ToString(signo);
                                     sum++;
                                     Console.Clear();
                                     if (signo == '=')
                                     {
                                         Console.WriteLine("La respuesta de");
-                                        foreach (string s in popo)
+                                        foreach (string s in arreglo)
                                         {
                                             Console.Write(s);
                                         }
                                         Console.WriteLine("\nes: " + a);
                                         enter();
-                                        validsub = salir();
+                                        Console.Clear();
+                                        validsub = salir(arreglo);
                                     }
                                     else
                                     {
                                         Console.WriteLine("Ingres un numero");
-                                        foreach (string s in popo)
+                                        foreach (string s in arreglo)
                                         {
                                             Console.Write(s);
                                         }
                                         y = int.Parse(Console.ReadLine());
-                                        popo[sum] = Convert.ToString(y);
+                                        arreglo[sum] = Convert.ToString(y);
                                         sum++;
                                         Console.Clear();
 
@@ -161,7 +165,7 @@ namespace Proyecto
                                                 Console.WriteLine("Dato incorrecto.\nPresiona enter.");
                                                 enter();
                                                 Console.Clear();
-                                                validsub = salir();
+                                                validsub = salir(arreglo);
                                                 break;
                                         }
                                     }
@@ -177,13 +181,13 @@ namespace Proyecto
                         switch (salida)
                         {
                             case 1:
-                                Console.WriteLine("Presiona enter para retornar.");
+                                Console.WriteLine("Presiona enter para salir.");
                                 enter();
                                 valid = false;
                                 Console.Clear();
                                 break;
                             case 2:
-                                Console.WriteLine("Presiona enter para salir.");
+                                Console.WriteLine("Presiona enter para retornar.");
                                 enter();
                                 valid = true;
                                 Console.Clear();
@@ -206,8 +210,9 @@ namespace Proyecto
         {
             while (Console.ReadKey().Key != ConsoleKey.Enter);
         }
-        static bool salir()
+        static bool salir(string[] arreglo)
         {
+            int borrar = 0;
             bool validsub = true;
             Console.WriteLine("¿Quieres intentar de nuevo?\n 1. Si\n 2. No");
             int salida = int.Parse(Console.ReadLine());
@@ -217,18 +222,30 @@ namespace Proyecto
                     Console.WriteLine("Presiona enter para retornar.");
                     enter();
                     validsub = true;
+                    for (borrar = 0; borrar <= 100; borrar++)
+                    {
+                        arreglo[borrar] = null;
+                    }
                     Console.Clear();
                     break;
                 case 2:
                     Console.WriteLine("Presiona enter para salir.");
                     enter();
                     validsub = false;
+                    for (borrar = 0; borrar < 100; borrar++)
+                    {
+                        arreglo[borrar] = null;
+                    }
                     Console.Clear();
                     break;
                 default:
                     Console.WriteLine("Valor invalido, Presiona enter.");
                     enter();
                     validsub = false;
+                    for (borrar = 0; borrar < 100; borrar++)
+                    {
+                        arreglo[borrar] = null;
+                    }
                     Console.Clear();
                     break;
             }
