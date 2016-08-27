@@ -84,7 +84,7 @@ namespace Proyecto
                                         Console.Write(s);
                                     }
                                     Console.Clear();
-                                    Console.WriteLine("Ingresa un numero");
+                                    Console.WriteLine("Escribe un numero");
                                     foreach (string s in arreglo)
                                     {
                                         Console.Write(s);
@@ -150,10 +150,10 @@ namespace Proyecto
                                     }
                                     else
                                     {
-                                        Console.Write("Ingres un numero");
+                                        Console.WriteLine("Escribe un numero");
                                         foreach (string s in arreglo)
                                         {
-                                            Console.WriteLine(s);
+                                            Console.Write(s);
                                         }
                                         y = int.Parse(Console.ReadLine());
                                         arreglo[sum] = Convert.ToString(y);
