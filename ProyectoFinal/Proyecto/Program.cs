@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace Proyecto
 {
@@ -12,13 +13,15 @@ namespace Proyecto
         {
 
             bool valid = true;
-            string[] arreglo = new string[100];
+            Stack datos = new Stack();
+            string[] numeros = new string[100];
+            string[] operadores = new string[100];
             
 
             while (valid) {
                 
                 bool validsub = true;
-                int nav = 0;
+                int nav = 0, e;
                 double a = 0, x, y;
                 int contador = 0, sum = 0;
                 char signo;
@@ -49,144 +52,28 @@ namespace Proyecto
                             Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (linea5.Length / 2)) + "}", linea5));
                             enter();
                             Console.Clear();
-                            validsub = salir(arreglo);
+                            validsub = salir(numeros);
                         }                        
                         break;
                     case 2:
                         //----------------------------------------------------------------------------------------------------------------
                         while (validsub)
                         {
-                            for (nav = 0; validsub == true; nav++)
+                            for (nav = 0; nav < 100; nav++)
                             {
-                                
-                                if (contador == 0)
+                                Console.WriteLine("Ingresa la operación a evaluar.");
+                                foreach (string s in numeros)
                                 {
-                                    Console.WriteLine("Escribe un numero.");
-                                    foreach (string s in arreglo)
-                                    {
-                                        Console.Write(s);
-                                    }
-                                    x = int.Parse(Console.ReadLine());
-                                    arreglo[sum] = Convert.ToString(x);
-                                    sum++;
-                                    Console.Clear();
-                                    Console.WriteLine("ingresa el operador");
-                                    foreach (string s in arreglo)
-                                    {
-                                        Console.Write(s);
-                                    }
-                                    signo = char.Parse(Console.ReadLine());
-                                    arreglo[sum] = Convert.ToString(signo);
-                                    sum++;
-                                    foreach (string s in arreglo)
-                                    {
-
-                                        Console.Write(s);
-                                    }
-                                    Console.Clear();
-                                    Console.WriteLine("Escribe un numero");
-                                    foreach (string s in arreglo)
-                                    {
-                                        Console.Write(s);
-                                    }
-                                    y = int.Parse(Console.ReadLine());
-                                    arreglo[sum] = Convert.ToString(y);
-                                    sum++;
-
-                                    Console.Clear();
-                                    switch (signo)
-                                    {
-                                        case '+':
-                                            a = x + y;
-                                            contador = contador + 1;
-                                            break;
-                                        case '-':
-                                            a = x - y;
-                                            contador = contador + 1;
-                                            break;
-                                        case '*':
-                                            a = x * y;
-                                            contador = contador + 1;
-                                            break;
-                                        case '/':
-                                            a = x / y;
-                                            contador = contador + 1;
-                                            break;
-                                        case '=':
-                                            nav = 80;
-                                            break;
-                                        default:
-                                            Console.WriteLine("Dato incorrecto.");
-                                            enter();
-                                            Console.Clear();
-                                            break;
-                                    }
+                                    Console.Write(s);
                                 }
-                                else if (contador == 1)
+                                var valor = Console.ReadLine();
+                                numeros[nav] = valor;
+                                Console.Clear();
+                                e = Int32.Parse(numeros[nav]);
+                                if (e == '[' || e == ']' || e == '{' || e == '}' || e == '(' || e == ')')
                                 {
-                                    Console.WriteLine("ingresa el operador");
-                                    foreach (string s in arreglo)
-                                    {
-                                        Console.Write(s);
-                                    }
-                                    signo = char.Parse(Console.ReadLine());
-                                    arreglo[sum] = Convert.ToString(signo);
-                                    sum++;
-                                    Console.Clear();
-                                    if (signo == '=')
-                                    {
-                                        string resp = "La respuesta de";
-                                        Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (resp.Length / 2)) + "}", resp));
-                                        foreach (string s in arreglo)
-                                        {
-                                            Console.Write(s);
-                                        }
-                                        string es = "\nes: " + a;
-                                        Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (es.Length / 2)) + "}", es));
 
-                                        enter();
-                                        Console.Clear();
-                                        validsub = salir(arreglo);
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("Escribe un numero");
-                                        foreach (string s in arreglo)
-                                        {
-                                            Console.Write(s);
-                                        }
-                                        y = int.Parse(Console.ReadLine());
-                                        arreglo[sum] = Convert.ToString(y);
-                                        sum++;
-                                        Console.Clear();
-
-                                        switch (signo)
-                                        {
-                                            case '+':
-                                                a = a + y;
-                                                break;
-                                            case '-':
-                                                a = a - y;
-                                                break;
-                                            case '*':
-                                                a = a * y;
-                                                break;
-                                            case '/':
-                                                a = a / y;
-                                                break;
-                                            case '=':
-                                                signo = '=';
-                                                break;
-                                            default:
-                                                Console.WriteLine("Dato incorrecto.\nPresiona enter.");
-                                                enter();
-                                                Console.Clear();
-                                                validsub = salir(arreglo);
-                                                break;
-                                        }
-                                    }
                                 }
-
                             }
                         }
                         //----------------------------------------------------------------------------------------------------------------
@@ -207,7 +94,7 @@ namespace Proyecto
                             Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (proyecto.Length / 2)) + "}", proyecto));
                             enter();
                             Console.Clear();
-                            validsub = salir(arreglo);
+                            validsub = salir(numeros);
                         }
                         break;
                     case 4:
@@ -250,7 +137,7 @@ namespace Proyecto
         {
             while (Console.ReadKey().Key != ConsoleKey.Enter);
         }
-        static bool salir(string[] arreglo)
+        static bool salir(string[] numeros)
         {
             int borrar = 0;
             bool validsub = true;
@@ -267,7 +154,7 @@ namespace Proyecto
                     validsub = true;
                     for (borrar = 0; borrar < 100; borrar++)
                     {
-                        arreglo[borrar] = null;
+                        numeros[borrar] = null;
                     }
                     Console.Clear();
                     break;
@@ -278,7 +165,7 @@ namespace Proyecto
                     validsub = false;
                     for (borrar = 0; borrar < 100; borrar++)
                     {
-                        arreglo[borrar] = null;
+                        numeros[borrar] = null;
                     }
                     Console.Clear();
                     break;
@@ -289,7 +176,7 @@ namespace Proyecto
                     validsub = false;
                     for (borrar = 0; borrar < 100; borrar++)
                     {
-                        arreglo[borrar] = null;
+                        numeros[borrar] = null;
                     }
                     Console.Clear();
                     break;
